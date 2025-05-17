@@ -1,39 +1,42 @@
-# 📉 Telco Customer Churn Prediction
+# 📉 Telco Customer Churn Prediction — FMCG & Retail Ready
 
-An end-to-end machine learning project to predict customer churn using real-world telecom data. It applies advanced modeling (XGBoost, Logistic Regression, Random Forest), interpretability techniques (SHAP), and EDA to uncover churn patterns.
-
----
-
-## 🚀 Project Highlights
-
-- **Goal**: Predict customers likely to churn and understand key drivers behind churn.
-- **Tech Stack**: Python, Pandas, scikit-learn, XGBoost, SHAP, Matplotlib, Seaborn
-- **Dataset**: Telco Customer Churn dataset (Kaggle)
-- **Modeling Focus**: Maximizing recall to capture churners
-- **Model Interpretability**: SHAP value analysis for transparency
-- **Key Deliverables**:
-  - Model training & comparison
-  - Visual EDA & feature analysis
-  - SHAP-based interpretability
-  - Confusion matrices, ROC curves, feature importance plots
+> A production-grade **churn prediction solution** with clear storytelling, SHAP-based interpretability, and actionable business insights — built for fast-paced industries like **Retail & FMCG**.
 
 ---
 
-## 📁 Folder Structure
+## 🚀 Executive Summary
 
-Telco-Customer-Churn-Prediction/
-│
-├── images/ # All project visualizations (see below)
-├── data/ # Cleaned dataset
-├── notebooks/ # Jupyter notebooks for each phase
-├── models/ # Saved model files
-├── README.md # This file
-└── requirements.txt # Dependencies
+As a former analyst for **PepsiCo (via Genpact)** and coming from a strong retail business background, I understand how **churn analytics** can directly impact **operational costs, marketing efficiency, and customer lifetime value**.
 
+This project simulates a telecom churn scenario — but the modeling logic, feature behavior, and churn drivers are equally relevant in **retail, e-commerce, and CPG** contexts, where:
 
-📸 *Project visuals folder preview:*
+- Tenure = Customer loyalty cycles
+- Contract = Subscription plans or purchasing habits
+- Charges = Discount sensitivity or price behavior
 
-## 📊 Exploratory Data Analysis (EDA)
+---
+
+## 🧠 Business Problem
+
+Customer churn is costly — and **retention is 5x cheaper than acquisition**. Predicting *who will churn* and *why* enables proactive campaigns, personalized outreach, and better resource allocation.
+
+**Objective**:  
+- Predict churn risk using ML models  
+- Explain predictions to stakeholders using SHAP  
+- Align with FMCG churn KPIs (repeat rate, tenure, high-risk customer tags)
+
+---
+
+## 📁 Dataset Overview
+
+- **Source**: [Kaggle - Telco Customer Churn](https://www.kaggle.com/datasets/blastchar/telco-customer-churn)
+- **Records**: 7,043
+- **Target**: `Churn` (Yes/No)
+- **Features**: Contract type, charges, payment mode, online services, tenure, etc.
+
+---
+
+## 📊 Exploratory Insights (EDA)
 
 ### 1. Churn Distribution
 ![Churn Distribution](images/churn_distribution.png)
@@ -47,64 +50,94 @@ Telco-Customer-Churn-Prediction/
 ### 4. Tenure vs Churn
 ![Tenure Distribution](images/tenure_vs_churn.png)
 
----
-
-## 📈 Model Evaluation
-
-### 1. Confusion Matrix - Tuned XGBoost
-![Confusion Matrix](images/confusion_matrix.png)
-
-### 2. ROC Curve - Logistic Regression
-![ROC - Logistic Regression](images/lr_roc_curve.png)
-
-### 3. ROC Curve - Random Forest
-![ROC - Random Forest](images/rf_roc_curve.png)
-
-### 4. ROC Curve - Tuned XGBoost
-![ROC - XGBoost](images/roc_curve_tunedxgb.png)
-
-### 5. ROC Curve - XGBoost Final
-![ROC - Final XGBoost](images/xgb_roc_curve.png)
+🧠 **Takeaways**:
+- Monthly contract holders churn the most.
+- Short-tenure users are at higher risk.
+- High monthly charges correlate with churn.
 
 ---
 
-## 🧠 Feature Importance & SHAP
+## ⚙️ Tech Stack
 
-### 1. XGBoost Top 15 Feature Importances
-![Top 15 Features](images/top15_features_xgboost.png)
+| Category           | Tools / Frameworks                           |
+|--------------------|----------------------------------------------|
+| Language           | Python (Jupyter Notebook)                    |
+| Data Processing    | pandas, numpy                                |
+| Visualization      | seaborn, matplotlib, plotly                  |
+| Modeling           | XGBoost, Random Forest, Logistic Regression  |
+| Interpretability   | SHAP                                         |
+| Deployment Ready   | `.pkl`, `.json` model artifacts              |
 
-### 2. TreeExplainer Global Importance
-![Tree Explainer](images/tree-explainer.png)
+---
 
-### 3. SHAP Summary Plot
+## 🤖 Modeling & Evaluation
+
+We tested three models and selected **XGBoost** for its superior recall (key in churn problems).
+
+| Model               | Recall (Churn) | ROC AUC |
+|--------------------|----------------|---------|
+| Logistic Regression| 0.72           | 0.84    |
+| Random Forest       | 0.76           | 0.87    |
+| **XGBoost (Final)** | **0.80**       | **0.89**|
+
+### ROC Curve - XGBoost
+![ROC - Final XGBoost](images/roc_curve_tunedxgb.png)
+
+---
+
+## 🔍 Model Interpretability with SHAP
+
+### SHAP Summary Plot
 ![SHAP Summary](images/shap_value.png)
 
-### 4. SHAP Force Plot
+### Force Plot (Individual Customer)
 ![Force Plot](images/force_plot.png)
 
----
-
-## ✅ Key Learnings
-
-- Importance of **recall** in churn problems
-- Clear impact of **contract type** and **tenure**
-- How **SHAP** values can build trust and transparency in predictions
+📌 **Key Influential Features**:
+- Contract type (Month-to-month is risky)
+- Tenure (low = higher churn risk)
+- Monthly charges
+- Online security, tech support
 
 ---
 
-## 📌 Next Steps
+## ✅ Deliverables
 
-- 📉 Integrate cost-sensitive learning
-- 📊 Deploy dashboard using **Streamlit**
-- 🔁 Hyperparameter tuning via **Optuna**
+- ✅ Cleaned dataset with labeled variables
+- ✅ XGBoost model (`.pkl`, `.json`) for easy deployment
+- ✅ Model evaluation & metrics
+- ✅ SHAP explanations for transparency
+- ✅ 📄 [Full PDF Report](Telco_Customer_Churn_Report.pdf)
 
 ---
 
-## 📬 Let's Connect
+## 📚 Next Steps
+
+- 🧪 Add cost-sensitive learning (e.g. Focal Loss)
+- 📊 Streamlit dashboard with churn likelihood filters
+- 📈 Integrate into a CRM for real-time flagging
+
+---
+
+## 🧠 Key Learnings
+
+- 📌 **Recall matters more than accuracy** in churn prediction
+- 💡 Feature engineering & preprocessing have major impact
+- 🧭 Explainability tools like SHAP are game-changers for stakeholder trust
+
+---
+
+## 📬 Let’s Connect
+
+I'm actively seeking **data analytics roles** in **Retail, FMCG, or Product Analytics**.
 
 - 🔗 [LinkedIn](https://www.linkedin.com/in/abinashsahoo/)
-- 🔗 [Portfolio](https://www.notion.so/Hey-there-I-am-Abinash-Sahoo-1dfe544fcbea80ef973eec9fd705f513)
-- 📫 Reach me for collaboration, feedback, or project walkthroughs!
+- 🌐 [Portfolio](https://www.notion.so/Hey-there-I-am-Abinash-Sahoo-1dfe544fcbea80ef973eec9fd705f513)
+- 📄 [Project PDF Report](Telco_Customer_Churn_Report.pdf)
 
 ---
+
+## ⭐ Show Your Support
+
+If you found this project helpful, please consider **⭐ starring** the repo and sharing feedback!
 
